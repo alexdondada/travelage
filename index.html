@@ -102,6 +102,14 @@ mobileMenu.addEventListener("click", () => {
             <li><a href="#destinations">Destinations</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#contact">Contact</a></li>
+		<li><div class="language-switcher">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </div></li>
         </ul>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -112,9 +120,52 @@ mobileMenu.addEventListener("click", () => {
 
     <!-- Main Content -->
     <main>
-        <h1>Welcome to Our Travel Agency</h1>
-        <p>Your journey begins here!</p>
+        <h1 id="welcome-heading">Welcome to Our Travel Agency</h1>
+        <p id="welcome-text">Your journey begins here!</p>
     </main>
+<script>
+	// Language Texts
+const translations = {
+    en: {
+        welcomeHeading: "Welcome to Our Travel Agency",
+        welcomeText: "Your journey begins here!",
+    },
+    es: {
+        welcomeHeading: "Bienvenido a Nuestra Agencia de Viajes",
+        welcomeText: "¡Tu viaje comienza aquí!",
+    },
+    fr: {
+        welcomeHeading: "Bienvenue dans Notre Agence de Voyage",
+        welcomeText: "Votre voyage commence ici!",
+    },
+    de: {
+        welcomeHeading: "Willkommen in Unserem Reisebüro",
+        welcomeText: "Ihre Reise beginnt hier!",
+    }
+};
 
+// Function to change language
+function changeLanguage(language) {
+    const elements = {
+        welcomeHeading: document.getElementById("welcome-heading"),
+        welcomeText: document.getElementById("welcome-text"),
+    };
+
+    // Update content with selected language
+    elements.welcomeHeading.textContent = translations[language].welcomeHeading;
+    elements.welcomeText.textContent = translations[language].welcomeText;
+}
+
+// Event listener for language selection
+document.getElementById("language-select").addEventListener("change", function () {
+    const selectedLanguage = this.value;
+    changeLanguage(selectedLanguage);
+});
+
+// Set default language on page load
+window.onload = function () {
+    changeLanguage("en"); // Default language is English
+};
+</script>
     <script src="script.js"></script>
 </body>
