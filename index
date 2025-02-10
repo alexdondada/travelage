@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background: url('header-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.5rem;
+}
+
+/* Destinations Section */
+#destinations {
+    padding: 20px;
+    text-align: center;
+}
+
+.destination-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.destination {
+    width: 30%;
+    margin: 20px 0;
+}
+
+.destination img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.destination h3 {
+    margin: 10px 0;
+}
+
+.destination p {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer h2 {
+    margin: 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+</style>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <h1>Welcome to Our Travel Agency</h1>
+        <p>Your journey begins here!</p>
+    </header>
+
+    <!-- Showcase of Destinations -->
+    <section id="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="destination-grid">
+            <div class="destination">
+                <img src="paris.jpg" alt="Paris">
+                <h3>Paris, France</h3>
+                <p>Experience the city of love and lights.</p>
+            </div>
+            <div class="destination">
+                <img src="tokyo.jpg" alt="Tokyo">
+                <h3>Tokyo, Japan</h3>
+                <p>Discover the vibrant culture of Tokyo.</p>
+            </div>
+            <div class="destination">
+                <img src="newyork.jpg" alt="New York">
+                <h3>New York, USA</h3>
+                <p>Explore the city that never sleeps.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@travelagency.com</p>
+        <p>Phone: +1 234 567 890</p>
+        <p>Address: 123 Travel St, Adventure City, World</p>
+    </footer>
+</body>
+</html>
