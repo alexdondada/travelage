@@ -287,6 +287,11 @@ div[class*='Vaccinated']{
 #group_reservation_form_step_3 .MobilePhone-wrapper{
     display:none !important;
 }
+
+.language-switcher {
+    margin-bottom: 20px;
+}
+
 </style>
 
     <meta charset="utf-8">
@@ -337,6 +342,14 @@ div[class*='Vaccinated']{
                             <div class="top-small-menu">
                                  <ul>
                                         <li><a href="/el/Article/contact.aspx">CONTACT</a></li>
+					 <div class="language-switcher">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </div>
                                 </ul>
                             </div>
 
@@ -400,10 +413,55 @@ div[class*='Vaccinated']{
         <iframe src="https://www.youtube.com/embed/b-D3Bm-5vsg?autoplay=1&mute=1&modestbranding=1&loop=1&playlist=b-D3Bm-5vsg&autohide=1&showinfo=0&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <div class="video-texts">
             <div class="video-text1">WorldPartytraveller.com</div>
-            <div class="video-text2">Invest today in your future memories</div>
-            <div class="video-text3">live the experience</div>
+            <div class="video-text2" id="welcome-heading">Invest today in your future memories</div>
+            <div class="video-text3" id="welcome-text">live the experience</div>
         </div>
     </div>   
+
+	<script>
+		// Language Texts
+const translations = {
+    en: {
+        welcomeHeading: "Invest today in your future memories",
+        welcomeText: "live the experience",
+    },
+    es: {
+        welcomeHeading: "Bienvenido a Nuestra Agencia de Viajes",
+        welcomeText: "¡Tu viaje comienza aquí!",
+    },
+    fr: {
+        welcomeHeading: "Bienvenue dans Notre Agence de Voyage",
+        welcomeText: "Votre voyage commence ici!",
+    },
+    de: {
+        welcomeHeading: "Willkommen in Unserem Reisebüro",
+        welcomeText: "Ihre Reise beginnt hier!",
+    }
+};
+
+// Function to change language
+function changeLanguage(language) {
+    const elements = {
+        welcomeHeading: document.getElementById("welcome-heading"),
+        welcomeText: document.getElementById("welcome-text"),
+    };
+
+    // Update content with selected language
+    elements.welcomeHeading.textContent = translations[language].welcomeHeading;
+    elements.welcomeText.textContent = translations[language].welcomeText;
+}
+
+// Event listener for language selection
+document.getElementById("language-select").addEventListener("change", function () {
+    const selectedLanguage = this.value;
+    changeLanguage(selectedLanguage);
+});
+
+// Set default language on page load
+window.onload = function () {
+    changeLanguage("en"); // Default language is English
+};
+	</script>
 
 <div class="home-container" >
    
