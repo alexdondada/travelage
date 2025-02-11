@@ -227,8 +227,8 @@ body {
 
 	.slide-text {
     position: absolute;
-    top: 70%; /* Adjust vertical position as needed */
-    left: 220px; /* Fixed distance from the left edge */
+    top: 60%; /* Adjust vertical position as needed */
+    left: 150px; /* Fixed distance from the left edge */
     transform: translateY(-50%); /* Center vertically */
     color: white;
     font-size: 4rem;
@@ -243,6 +243,9 @@ body {
 .slide.active .slide-text {
     opacity: 1; /* Make text visible */
     transform: translateX(0); /* Move text to its final position */
+}
+.slide:not(.active) .slide-text {
+    transform: translateX(100%); /* Slide out to the right */
 }
 	
 </style>
