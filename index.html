@@ -228,7 +228,7 @@ body {
 	.slide-text {
     position: absolute;
     top: 60%; /* Adjust vertical position as needed */
-    left: 0px; /* Fixed distance from the left edge */
+    left: 150px; /* Fixed distance from the left edge */
     color: white;
     font-size: 4rem;
     font-family: Arial, sans-serif;
@@ -242,13 +242,10 @@ body {
 
 .slide.active .slide-text {
     opacity: 1; /* Make text visible */
-	transform: translateX(150px) translateY(-50%); /* Move text to its final position (20px from the left) */
+    transform: translateX(0) translateY(-50%); /* Move text to its final position */
 }
 
-/* Slide out to the right when the slide is no longer active */
-.slide:not(.active) .slide-text {
-    transform: translateX(100%) translateY(-50%); /* Slide out to the right */
-}
+
 	
 </style>
 
