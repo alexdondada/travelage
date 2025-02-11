@@ -268,10 +268,10 @@ body {
 				
 
 	.slide-button {
-    position: absolute;
+    position: absolute !important;
     background: #D03000;
     width: auto;
-    padding: 0 30px;
+    padding: 0 30px!important;
     font-size: 21px;
     color: #fff;
     border-radius: 8px;
@@ -279,25 +279,17 @@ body {
     float: left;
     cursor: pointer;
     opacity: 0;
-    top: 70%;
-    transform: translateX(-100%);
-    transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
+    top: 70% !important;
+    transform: translateX(-100%)!important;
+    transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s!important;
 }
 .slide.active .slide-button {
-    opacity: 1;transform: translateX(0);
+    opacity: 1;transform: translateX(0) !important;
 }
 	.slide:not(.active) .slide-button{
-    transform: translateX(100%);}
-	
-	.sq_content:hover{
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
-  box-shadow: 10px 10px 5px #888888;
-}
-	
+    transform: translateX(100%)!important;
+	}
+
 </style>
 
 	
