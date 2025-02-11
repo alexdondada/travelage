@@ -266,27 +266,28 @@ body {
 .slide:not(.active) .sub-text{
     transform: translateX(100%);}
 				
-
-	.slide-button {
-    position: absolute!important;
+.slide-button {
+    position: absolute;
     background: #D03000;
-    width: auto;
-    padding: 0 30px;
+    top: 70%;
+    left: 20px;
+    padding: 10px 20px;
     font-size: 21px;
-    color: #fff;
+    font-family: Arial, sans-serif;
+    border: none;
     border-radius: 8px;
-    display: block;
-    float: left;
     cursor: pointer;
     opacity: 0;
-    top: 70%!important;
-    transform: translateX(-100%);
+    transform: translateX(-100%); /* Start off-screen to the left */
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
+    text-decoration: none; /* Remove underline from link */
+    display: inline-block; /* Make the link behave like a button */
 }
+	
 .slide.active .slide-button {
     opacity: 1;transform: translateX(0);
 }
-	.slide:not(.active) .slide-button{
+	.slide:not(.active) .slide-button {
     transform: translateX(100%);
 	}
 
@@ -323,26 +324,23 @@ body {
                 <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1">
                 <p class="slide-text">Explore the Taj Mahal</p>
 		<p class="sub-text">Personalized packages for all...</p>
-	        <a href="https://example.com" class="slide-button" tabindex="-1">Book now</a>
+	        <a href="https://example.com" class="slide-button">Book now</a>
             </div>
             <div class="slide">
                 <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2">
                 <p class="slide-text">Discover North Africa</p>
 		<p class="sub-text">Dive into new experiences...</p>
-	        <a href="https://example.com" class="slide-button" tabindex="-1">Book now</a>
+	        <a href="https://example.com" class="slide-button">Book now</a>
             </div>
             <div class="slide">
                 <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3">
                 <p class="slide-text">Watch the Aurora Borealis</p>
 		    <p class="sub-text">Enhance the adventure...</p>
-	        <a href="https://example.com" class="slide-button" tabindex="-1">Book now</a>
+	        <a href="https://example.com" class="slide-button">Book now</a>
             </div>
         </div>
     </div>
 
-	    
-        <h1>Welcome to Our Travel Agency</h1>
-        <p>Your journey begins here!</p>
    <h2 class="title">Top Destinations</h2>
 			<p class="subtitle">This is the most popular destination in the last month</p>
 
