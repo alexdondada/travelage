@@ -219,30 +219,25 @@ body {
 .slide.active {
     opacity: 1;
 }
-	
-.main_slider .slider_wrap .slide .slide_content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-bottom: 140px;
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-	.main_slider .slider_wrap .slide .slide_content .title_wrap {
-    position: relative;
-    width: auto;
-    margin-bottom: 30px;
-    max-width: 50%;
-    transition: all 0.4sease-out;
-    transform: translateX(-100vw);
-}
-	.main_slider .slider_wrap .slide .slide_content .title_wrap .country {
-    font-size: 25px;
-    color: #fff;
+
+.slide-text {
     position: absolute;
-    right: 0;
-    width: auto;
-    top: -64px;
-    text-align: right;
-    padding-left: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 </style>
 
@@ -275,23 +270,14 @@ body {
 
 			<div class="slideshow-container">
         <div class="slideshow">
-		<div class="slide_content">
-                               <div class="title_wrap">
-                                   <p class="country">Iceland</p>
-                                   <h2 class="slide_title">Reykjavik</h2>
-                               </div>
-                               <p class="text">
-                                   The capital and largest city as well as the community of Iceland
-                               </p>
-                               <div class="buttons">
-                                   <a href="tour-page-right-sidebar.html" class="btn button" tabindex="-1">Book now</a>
-                                   <a href="travel-list-full-width.html" class="link" tabindex="-1"><span>Choose tour</span></a>
-                               </div>
-                               <div class="next_title slick-arrow" style="">Arizona</div>
-                           </div>
-            <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1" class="slide">
-            <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2" class="slide">
-            <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3" class="slide">      
+		<div class="slide">
+            <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1">
+			<div class="slide-text">This is the first image</div>
+            <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2">
+			<div class="slide-text">This is the second image</div>
+            <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3">
+			<div class="slide-text">This is the third image</div>
+	</div>
 	</div>
     </div>
 
