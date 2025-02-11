@@ -209,17 +209,19 @@ body {
 
 /* Set the initial state */
 .fade {
-  opacity: 0; /* Fully transparent */
-  animation: fadeIn 2.5s ease-in-out; /* Apply the animation */
+    animation-name: fade;
+    animation-duration: 1.5s;
+	transition-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
 }
 
 /* Define the fadeIn animation */
 @keyframes fadeIn {
   0% {
-    opacity: 0; /* Start fully transparent */
+    opacity: 1; /* Start fully transparent */
   }
   100% {
-    opacity: 1; /* End fully opaque */
+    opacity: 0; /* End fully opaque */
   }
 }
 	
