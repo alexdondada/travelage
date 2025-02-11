@@ -13,6 +13,33 @@ body {
     margin: 0;
     padding: 0;
 }
+	.tour_item {
+    width: 700px;
+    margin-right: 40px;
+    height: 350px;
+    position: relative;
+    border-radius: 13px;
+    padding: 40px 48px;
+    display: block;
+    float: left;
+    background-size: cover;
+    background-position: center center;
+}
+	.tour_item .shadow {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    position: absolute;
+    top: 10px;
+    left: -6px;
+    right: -6px;
+    bottom: -10px;
+    z-index: -1;
+    width: auto;
+    opacity: 0;
+    transition: all 0.21sease-out;
+    will-change: opacity;
+}
 /* Navigation Bar */
 .navbar {
     display: flex;
@@ -21,31 +48,40 @@ body {
     background-color: #333;
     padding: 10px 20px;
 }
+
 .logo {
     color: #fff;
     font-size: 24px;
     font-weight: bold;
 }
+
 .nav-links {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
+
 .nav-links li {
+    position: relative;
     margin: 0 15px;
 }
+
 .nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s ease;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease;
 }
+
 .nav-links a:hover {
-    color: #f39c12;
+    background-color: #555;
 }
+
 /* Dropdown Menu */
-.dropdown-menu {
+.dropdown-content {
     display: none;
     position: absolute;
     top: 100%;
@@ -57,22 +93,27 @@ body {
     min-width: 150px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.dropdown-menu li {
+
+.dropdown-content li {
     margin: 0;
 }
-.dropdown-menu a {
+
+.dropdown-content a {
     padding: 10px;
     display: block;
 }
-.dropdown:hover .dropdown-menu {
+
+.dropdown:hover .dropdown-content {
     display: block;
 }
+
 /* Mobile Menu Toggle */
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
 }
+
 .menu-toggle .bar {
     width: 25px;
     height: 3px;
@@ -80,6 +121,7 @@ body {
     margin: 4px 0;
     transition: all 0.3s ease;
 }
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .nav-links {
@@ -88,24 +130,31 @@ body {
         width: 100%;
         background-color: #333;
     }
+
     .nav-links.active {
         display: flex;
     }
+
     .menu-toggle {
         display: flex;
     }
-	.dropdown-menu {
+
+    .dropdown-content {
         position: static;
         display: none;
         background-color: #555;
     }
-    .dropdown:hover .dropdown-menu {
+
+    .dropdown:hover .dropdown-content {
         display: none;
     }
-    .dropdown.active .dropdown-menu {
+
+    .dropdown.active .dropdown-content {
         display: block;
     }
 }
+/* Nav bar ENDS here */	
+	
 </style>
 	<body>
     <!-- Navigation Bar -->
@@ -113,17 +162,16 @@ body {
         <div class="logo">Travel Agency</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#destinations">Destinations</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-		<li class="dropdown">
-                <a href="#destinations">Destinations</a>
-                <ul class="dropdown-menu">
+            <li class="dropdown">
+                <a href="#destinations" class="dropbtn">Destinations</a>
+                <ul class="dropdown-content">
                     <li><a href="#europe">Europe</a></li>
                     <li><a href="#asia">Asia</a></li>
                     <li><a href="#america">America</a></li>
                 </ul>
             </li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="menu-toggle" id="mobile-menu">
             <span class="bar"></span>
@@ -150,15 +198,56 @@ body {
 	    <p>sadasdas</p>
 	    <p>zzzzzzzzzz</p>
 	    Most Popular Tours
+
+		<a href="https://tripin.hellodigi.ru/tour-page-right-sidebar.html" class="tour_item slick-slide slick-active" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-4.jpg)" data-slick-index="3" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide13">
+                               <div class="tour_item_top">
+                                   <p class="country">
+                                       <span>The biggest part of the world</span>
+                                   </p>
+                                   <div class="add_bookmark fav-button">
+                                       <i class="is-added bouncy"></i>
+                                       <i class="not-added bouncy"></i>
+                                       <span class="fav-overlay"></span>
+                                   </div>
+                               </div>
+                               <div class="tour_item_bottom">
+                                   <h3 class="_title">Asia</h3>
+                                   <div class="_info">
+                                       <div class="_info_left">
+                                           <div class="days">5 days |</div>
+                                           <div class="cost">from $356</div>
+                                       </div>
+                                       <div class="_info_right">
+                                           <div class="rating-stars">
+                                               <div class="star filled"></div>
+                                               <div class="star filled"></div>
+                                               <div class="star filled"></div>
+                                               <div class="star"></div>
+                                               <div class="star"></div>
+                                           </div>
+                                           <p class="rating-text">10 reviews</p>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-4.jpg)"></div>
+                           </a>
 	    
 </body>
-		<script>
-		// Toggle mobile menu
+		<script>// Toggle mobile menu
 const mobileMenu = document.getElementById("mobile-menu");
 const navLinks = document.querySelector(".nav-links");
 
 mobileMenu.addEventListener("click", () => {
     navLinks.classList.toggle("active");
+});
+
+// Toggle dropdown menu on mobile
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach((dropdown) => {
+    dropdown.addEventListener("click", () => {
+        dropdown.classList.toggle("active");
+    });
 });
 	</script>
 
