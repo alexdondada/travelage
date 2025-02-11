@@ -193,68 +193,51 @@ body {
 	/* Slideshow Container */
 .slideshow-container {
     position: relative;
-    max-width: 800px;
     width: 100%;
+    max-width: 600px; /* You can adjust the size */
+    margin: auto;
     overflow: hidden;
-    border: 5px solid #333;
+}
+
+.slide {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
 }
 
-/* Slides */
-.slide {
-    display: none;
-    width: 100%;
+.fade {
+    animation: fade 1.5s ease-in-out infinite;
 }
 
-.slide img {
-    width: 100%;
-    vertical-align: middle;
+@keyframes fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
-/* Navigation Buttons */
-.prev, .next {
-    cursor: pointer;
+.dots {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    transition: background-color 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 5px 5px 0;
-    user-select: none;
-}
-
-.next {
-    right: 0;
-    border-radius: 5px 0 0 5px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Dots/Circles for Slide Indicators */
-.dots-container {
-    text-align: center;
-    margin-top: 20px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .dot {
-    cursor: pointer;
     height: 15px;
     width: 15px;
     margin: 0 5px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.6s ease;
 }
 
-.dot.active, .dot:hover {
+.dot.active {
     background-color: #717171;
 }
 </style>
@@ -285,38 +268,30 @@ body {
 
 	
 		<body>
-    <!-- Main Content -->
-    <main>
 
-<!-- Slideshow Container -->
     <div class="slideshow-container">
-        <!-- Slides -->
         <div class="slide fade">
-            <img src="image1.jpg" alt="https://tripin.hellodigi.ru/img/main_img-2.jpg">
+            <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1">
         </div>
         <div class="slide fade">
-            <img src="image2.jpg" alt="https://tripin.hellodigi.ru/img/main_img-1.jpg">
+            <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2">
         </div>
         <div class="slide fade">
-            <img src="image3.jpg" alt="https://tripin.hellodigi.ru/img/main_img-3.jpg">
+            <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3">
         </div>
 
-        <!-- Navigation Buttons -->
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a> <!-- Left arrow -->
-        <a class="next" onclick="changeSlide(1)">&#10095;</a> <!-- Right arrow -->
-    </div>
-
-    <!-- Dots/Circles for Slide Indicators -->
-    <div class="dots-container">
-        <span class="dot" onclick="goToSlide(0)"></span>
-        <span class="dot" onclick="goToSlide(1)"></span>
-        <span class="dot" onclick="goToSlide(2)"></span>
+        <!-- Navigation dots -->
+        <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </div>
 
 	    
         <h1>Welcome to Our Travel Agency</h1>
         <p>Your journey begins here!</p>
-    </main><h2 class="title">Top Destinations</h2>
+   <h2 class="title">Top Destinations</h2>
 			<p class="subtitle">This is the most popular destination in the last month</p>
 
 <div class="scroll">
@@ -428,54 +403,37 @@ body {
 	    
 </body>
 	<script>
-		let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
+		let slideIndex = 0;
 
-// Function to show a specific slide
-function showSlide(index) {
-    // Hide all slides
+function showSlides() {
+    let slides = document.querySelectorAll('.slide');
+    let dots = document.querySelectorAll('.dot');
+
+    // Reset all slides to display: none
     slides.forEach((slide) => {
         slide.style.display = "none";
     });
 
-    // Remove the "active" class from all dots
+    // Reset all dots to be inactive
     dots.forEach((dot) => {
-        dot.classList.remove("active");
+        dot.classList.remove('active');
     });
 
-    // Show the current slide and mark its dot as active
-    slides[index].style.display = "block";
-    dots[index].classList.add("active");
+    // Increment slide index
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; } // Loop back to first slide
+
+    // Show current slide and activate corresponding dot
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add('active');
+
+    // Set a timer to move to the next slide every 3 seconds
+    setTimeout(showSlides, 3000); 
 }
 
-// Function to change slide
-function changeSlide(n) {
-    currentSlide += n;
+// Initialize the slideshow
+showSlides();
 
-    // Loop back to the first slide if at the end
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    } else if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-    }
-
-    showSlide(currentSlide);
-}
-
-// Function to go to a specific slide
-function goToSlide(index) {
-    currentSlide = index;
-    showSlide(currentSlide);
-}
-
-// Automatically change slides every 5 seconds
-setInterval(() => {
-    changeSlide(1);
-}, 5000);
-
-// Show the first slide initially
-showSlide(currentSlide);
 	</script>
 	
 		<script>
