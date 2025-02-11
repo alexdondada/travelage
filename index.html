@@ -188,24 +188,34 @@ body {
 	padding-right:250px;
 	}
 
-.image-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+
+	.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.fade {
-	  position: absolute;
-  width: 100%;
-	height: 100%;
+.slideshow {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
     top: 0;
     left: 0;
-  opacity: 0.4;
-  transition: opacity 1s ease-in-out;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 
-.active {
-  opacity: 1;
+.slide.active {
+    opacity: 1;
 }
 
 </style>
@@ -237,10 +247,12 @@ body {
 	
 		<body>
 
-    <div class="slideshow-container">
-            <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1" class="fade" id="slide1">
-            <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2" class="fade" id="slide2">
-            <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3" class="fade" id="slide3">
+			<div class="slideshow-container">
+        <div class="slideshow">
+            <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1" class="slide">
+            <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2" class="slide">
+            <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3" class="slide">      
+	</div>
     </div>
 
 	    
@@ -358,25 +370,28 @@ body {
 	    
 </body>
 	<script>
-const images = document.querySelectorAll('.fade');
-let currentImageIndex = 0;
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
 
-function changeImage() {
-  // Remove active class from the current image
-  images[currentImageIndex].classList.remove('active');
-  
-  // Update the index to show the next image
-  currentImageIndex = (currentImageIndex + 1) % images.length;
-  
-  // Add active class to the new image
-  images[currentImageIndex].classList.add('active');
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
+        }
+    });
 }
 
-// Initialize the first image as active
-images[currentImageIndex].classList.add('active');
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
 
-// Change image every 4 seconds
-setInterval(changeImage, 4000);
+// Initial display
+showSlide(currentSlide);
+
+// Automatically switch slides every 5 seconds
+setInterval(nextSlide, 4000);
 		
 	</script>
 	
