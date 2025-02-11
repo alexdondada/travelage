@@ -237,16 +237,10 @@ body {
     max-width: 80%;
     opacity: 0;
     transform: translateX(-100%) translateY(-50%);
-    transition: opacity 1s ease 0.5s, transform 1s ease 0.5s;
+    transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
 
-.slide.active .slide-text {
-    opacity: 1; /* Make text visible */
-    transform: translateX(0) translateY(-50%);
-}
-.slide:not(.active) .slide-text {
-    transform: translateX(100%) translateY(-50%); /* Slide out to the right */
-}
+
 
 	
 </style>
