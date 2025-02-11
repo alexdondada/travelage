@@ -228,7 +228,7 @@ body {
 	.slide-text {
     position: absolute;
     top: 60%;
-left: 150px;
+    left: -100vw;
     color: white;
     font-size: 4rem;
     font-family: Arial, sans-serif;
@@ -236,7 +236,6 @@ left: 150px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     max-width: 80%;
     opacity: 0;
-    transform: translateX(-100%) translateY(-50%);
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
 .slide.active .slide-text {
@@ -245,7 +244,7 @@ left: 150px;
 }
 .slide:not(.active) .slide-text {
     opacity: 0;
-    transform: translateX(100vw) translateY(-50%);
+    transform: translateX(100%) translateY(-50%);
 }
 
 	
