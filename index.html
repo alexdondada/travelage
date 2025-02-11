@@ -275,18 +275,27 @@ body {
     float: left;
     opacity: 0;
     top: 75%;
-    transform: translateX(-100%);
+    transform: translateX(-100%) translateY(-30%);
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
 .slide.active .slide-text,
 .slide.active .slide-button {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) translateY(-30%);
 }
 
 .slide:not(.active) .slide-text,
 .slide:not(.active) .slide-button {
-    transform: translateX(100%);
+    transform: translateX(100%) translateY(-30%);
+}
+
+	.sq_content:hover{
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  box-shadow: 10px 10px 5px #888888;
 }
 	
 </style>
