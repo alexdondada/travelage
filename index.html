@@ -234,6 +234,7 @@ body {
     max-width: 80%;
     position: absolute;
     top: 60%;
+    left: 150px;
     opacity: 0;
     transform: translateX(-100%) translateY(-50%);
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
@@ -247,25 +248,26 @@ body {
 }
 
     .sub-text {
-    color: white;
-    font-size: 4rem;
+    color: #c1c1c1;
+    font-size: 24px;
     font-family: Arial, sans-serif;
     text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     max-width: 80%;
     position: absolute;
-    top: 60%;
+    top: 67%;
+    left: 150px;
     opacity: 0;
     transition-delay: 0.5s;
-    transform: translateX(-100%) translateY(-50%);
+    transform: translateX(-100%) translateY(-30%);
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
 .slide.active .sub-text {
     opacity: 1;
-    transform: translateX(150px) translateY(-50%);
+    transform: translateX(150px) translateY(-30%);
 }
 .slide:not(.active) .sub-text {
-    transform: translateX(100%) translateY(-50%);
+    transform: translateX(100%) translateY(-30%);
 }
 
 	
