@@ -262,13 +262,7 @@ body {
     transform: translateX(-100%) translateY(-30%);
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
-.slide.active .sub-text {
-    opacity: 1;
-    transform: translateX(130px) translateY(-30%);
-}
-.slide:not(.active) .sub-text {
-    transform: translateX(100%) translateY(-30%);
-}
+
 	.slide-button {
     background: #D03000;
     line-height: 50px;
@@ -281,16 +275,18 @@ body {
     float: left;
     opacity: 0;
     top: 75%;
-    transition-delay: 1s;
-    transform: translateX(-100%) translateY(-10%);
+    transform: translateX(-100%);
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
+.slide.active .slide-text,
 .slide.active .slide-button {
     opacity: 1;
-    transform: translateX(130px) translateY(-10%);
+    transform: translateX(0);
 }
+
+.slide:not(.active) .slide-text,
 .slide:not(.active) .slide-button {
-    transform: translateX(100%) translateY(-10%);
+    transform: translateX(100%);
 }
 	
 </style>
@@ -326,20 +322,23 @@ body {
                 <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1">
                 <p class="slide-text">Explore the Taj Mahal</p>
 		<p class="sub-text">Personalized packages for all...</p>
+		    <button class="slide-button" a href="tour-page-right-sidebar.html" tabindex="-1">Book now</a>
+		</button>
             </div>
             <div class="slide">
                 <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2">
                 <p class="slide-text">Discover North Africa</p>
 		<p class="sub-text">Dive into new experiences...</p>
+		    <button class="slide-button" a href="tour-page-right-sidebar.html" tabindex="-1">Book now</a>
+		</button>
             </div>
             <div class="slide">
                 <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3">
                 <p class="slide-text">Watch the Aurora Borealis</p>
 		    <p class="sub-text">Enhance the adventure...</p>
+		    <button class="slide-button" a href="tour-page-right-sidebar.html" tabindex="-1">Book now</a>
+		</button>
             </div>
-		<div class="slide-button">
-			<a href="tour-page-right-sidebar.html" class="slide-button" tabindex="-1">Book now</a>
-		</div>
         </div>
     </div>
 
