@@ -13,6 +13,7 @@ body {
     margin: 0;
     padding: 0;
 }
+	/* Tour slideshow */
 	.tour_item {
     width: 700px;
     margin-right: 40px;
@@ -39,6 +40,44 @@ body {
     opacity: 0;
     transition: all 0.21sease-out;
     will-change: opacity;
+}
+	.tour_item_top {
+    position: relative;
+    z-index: 1;
+    padding-right: 80px;
+}
+	.tour_item_top .add_bookmark {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.54);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+	.tour_item_top .country {
+    font-size: 16px;
+    display: flex
+;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    height: 60px;
+}
+	.slick-slide {
+    display: none;
+    float: left;
+    outline: 0;
+    height: 100%;
+    min-height: 1px;
+}
+	@media screen and (max-width: 1520px) {
+    .tour_item {
+        width: 630px;
+    }
+}
+	.slick-initialized .slick-slide {
+    display: block;
 }
 /* Navigation Bar */
 .navbar {
@@ -199,10 +238,11 @@ body {
 	    <p>zzzzzzzzzz</p>
 	    Most Popular Tours
 
-		<a href="https://tripin.hellodigi.ru/tour-page-right-sidebar.html" class="tour_item slick-slide slick-active" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-4.jpg)" data-slick-index="3" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide13">
+
+<a href="tour-page-right-sidebar.html" class="tour_item slick-slide" style="background-image: url(img/tour-item-3.jpg)" tabindex="-1" role="option" aria-describedby="slick-slide12" data-slick-index="2" aria-hidden="true">
                                <div class="tour_item_top">
                                    <p class="country">
-                                       <span>The biggest part of the world</span>
+                                       <span>Iceland</span>
                                    </p>
                                    <div class="add_bookmark fav-button">
                                        <i class="is-added bouncy"></i>
@@ -211,7 +251,7 @@ body {
                                    </div>
                                </div>
                                <div class="tour_item_bottom">
-                                   <h3 class="_title">Asia</h3>
+                                   <h3 class="_title">Reykjavik</h3>
                                    <div class="_info">
                                        <div class="_info_left">
                                            <div class="days">5 days |</div>
@@ -229,8 +269,24 @@ body {
                                        </div>
                                    </div>
                                </div>
-                               <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-4.jpg)"></div>
+                               <div class="shadow js-shadow" style="background-image: url(img/tour-item-3.jpg)"></div>
                            </a>
+		<div class="tour_item_top">
+                                   <p class="country">
+                                       <span>Iceland</span>
+                                   </p>
+                                   <div class="add_bookmark fav-button">
+                                       <i class="is-added bouncy"></i>
+                                       <i class="not-added bouncy"></i>
+                                       <span class="fav-overlay"></span>
+                                   </div>
+                               </div>
+<div class="add_bookmark fav-button">
+                                       <i class="is-added bouncy"></i>
+                                       <i class="not-added bouncy"></i>
+                                       <span class="fav-overlay"></span>
+                                   </div>
+		
 	    
 </body>
 		<script>// Toggle mobile menu
