@@ -190,7 +190,6 @@ body {
 	}
 
 
-	/* Slideshow Container */
 .slideshow-container {
     position: relative;
     width: 100%;
@@ -212,18 +211,6 @@ img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-}
-	
-/* Optional: Add a fade effect */
-.fade {
-    animation: fade 1.5s ease-in-out;
-}
-
-@keyframes fade {
-    0% { opacity: 0; }
-    20% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; }
 }
 </style>
 
@@ -386,19 +373,19 @@ img {
 function showSlides() {
     let slides = document.querySelectorAll('.slide');
 
-    // Hide all slides by setting opacity to 0
-    slides.forEach((slide) => {
+    // Hide all slides initially (except for the first one)
+    slides.forEach((slide, index) => {
         slide.style.opacity = 0;
         slide.style.visibility = "hidden";
     });
 
-    // Increment the slide index and loop back to the first slide
+    // Increment slide index
     slideIndex++;
     if (slideIndex > slides.length) {
         slideIndex = 1;
     }
 
-    // Display the current slide by setting opacity to 1 and visibility to visible
+    // Display the current slide
     slides[slideIndex - 1].style.opacity = 1;
     slides[slideIndex - 1].style.visibility = "visible";
 
@@ -406,8 +393,14 @@ function showSlides() {
     setTimeout(showSlides, 3000); 
 }
 
-// Initialize the slideshow
-showSlides();
+// Ensure the first slide is visible when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    let slides = document.querySelectorAll('.slide');
+    slides[0].style.opacity = 1;
+    slides[0].style.visibility = "visible";
+    showSlides();  // Start the slideshow
+});
+
 	</script>
 	
 		<script>
