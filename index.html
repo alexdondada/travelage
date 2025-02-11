@@ -236,13 +236,15 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     max-width: 80%; /* Prevent text from stretching too far */
     opacity: 0; /* Start with text invisible */
-	transform: translateX(-100%) translateY(-50%); /* Start off-screen to the left */
-	transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s; /* Delay of 0.5s */
+    transform: translateX(-100%) translateY(-50%); /* Start off-screen to the left */
+    transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s; /* Smooth transition */
 }
+
 .slide.active .slide-text {
     opacity: 1; /* Make text visible */
     transform: translateX(0) translateY(-50%); /* Move text to its final position */
 }
+
 /* Slide out to the right when the slide is no longer active */
 .slide:not(.active) .slide-text {
     transform: translateX(100%) translateY(-50%); /* Slide out to the right */
