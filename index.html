@@ -233,16 +233,18 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     max-width: 80%;
     position: absolute;
+    top: 60%;
+    left: 130px;
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(-100%) translateY(-50%);
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
 .slide.active .slide-text {
     opacity: 1;
-    transform: translateX(150px);
+    transform: translateX(130px) translateY(-50%);
 }
 .slide:not(.active) .slide-text {
-    transform: translateX(100%);
+    transform: translateX(100%) translateY(-50%);
 }
 
     .sub-text {
@@ -253,17 +255,19 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     max-width: 80%;
     position: absolute;
+    top: 67%;
+    left: 130px;
     opacity: 0;
     transition-delay: 1s;
-    transform: translateX(-100%);
+    transform: translateX(-100%) translateY(-30%);
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
 .slide.active .sub-text {
     opacity: 1;
-    transform: translateX(150px);
+    transform: translateX(130px) translateY(-30%);
 }
 .slide:not(.active) .sub-text {
-    transform: translateX(100%);
+    transform: translateX(100%) translateY(-30%);
 }
 	.slide-button {
     background: #D03000;
@@ -277,16 +281,18 @@ body {
     display: block;
     float: left;
     opacity: 0;
+    top: 75%;
+    left: 130px;
     transition-delay: 1s;
-    transform: translateX(-100%);
+    transform: translateX(-100%) translateY(-10%);
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
 .slide.active .slide-button {
     opacity: 1;
-    transform: translateX(150px);
+    transform: translateX(130px) translateY(-10%);
 }
 .slide:not(.active) .slide-button {
-    transform: translateX(100%);
+    transform: translateX(100%) translateY(-10%);
 }
 	
 </style>
