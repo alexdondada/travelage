@@ -194,13 +194,14 @@ body {
 .slideshow-container {
     position: relative;
     width: 100%;
-    max-width: 600px; /* You can adjust the size */
+    max-width: 600px; /* Adjust this to your preferred size */
     margin: auto;
     overflow: hidden;
 }
 
 .slide {
     display: none;
+    width: 100%;
 }
 
 img {
@@ -209,8 +210,9 @@ img {
     border-radius: 10px;
 }
 
+/* Optional: Add a fade effect */
 .fade {
-    animation: fade 1.5s ease-in-out infinite;
+    animation: fade 1.5s ease-in-out;
 }
 
 @keyframes fade {
@@ -218,27 +220,6 @@ img {
     20% { opacity: 1; }
     80% { opacity: 1; }
     100% { opacity: 0; }
-}
-
-.dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.dot.active {
-    background-color: #717171;
 }
 </style>
 
@@ -278,13 +259,6 @@ img {
         </div>
         <div class="slide fade">
             <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3">
-        </div>
-
-        <!-- Navigation dots -->
-        <div class="dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
         </div>
     </div>
 
@@ -402,32 +376,26 @@ img {
 		
 	    
 </body>
-	<script>
-		let slideIndex = 0;
+	<script>let slideIndex = 0;
 
 function showSlides() {
     let slides = document.querySelectorAll('.slide');
-    let dots = document.querySelectorAll('.dot');
 
-    // Reset all slides to display: none
+    // Hide all slides initially
     slides.forEach((slide) => {
         slide.style.display = "none";
     });
 
-    // Reset all dots to be inactive
-    dots.forEach((dot) => {
-        dot.classList.remove('active');
-    });
-
-    // Increment slide index
+    // Increment the slide index and loop back to the first slide when reaching the end
     slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; } // Loop back to first slide
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
 
-    // Show current slide and activate corresponding dot
+    // Show the current slide
     slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].classList.add('active');
 
-    // Set a timer to move to the next slide every 3 seconds
+    // Set the transition interval (e.g., 3 seconds)
     setTimeout(showSlides, 3000); 
 }
 
