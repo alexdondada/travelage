@@ -6,6 +6,8 @@
     <title>Navigation Bar</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
+	
 <style>
 	/* General Styles */
 body {
@@ -13,6 +15,21 @@ body {
     margin: 0;
     padding: 0;
 }
+	p, h1, h2 {
+		padding-left: 250px;
+		padding-right: 250px;
+		margin-bottom: 10px;
+	}
+	.subtitle {
+    font-size: 18px;
+    color: rgba(74, 74, 74, 0.58);
+}
+	.title {
+    font-size: 48px;
+    font-family: 'Prata', serif;
+		font-weight: normal;
+	}
+	
 /* Navigation Bar */
 .navbar {
     display: flex;
@@ -136,14 +153,10 @@ body {
     padding-bottom: 100%;
 }
 .destinations_item .sq_parent .sq_wrap {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: absolute;width: 100%;height: 100%;
 }
 .destinations_item .sq_parent .sq_wrap .sq_content {
-    float: left;
-    width: 100%;
-    height: 100%;
+    float: left;width: 100%;height: 100%;
 }
 .destinations_item ._content {
     position: relative;
@@ -168,20 +181,6 @@ body {
     text-align: center;
     margin-bottom: 60px;
 }
-	p, h1, h2 {
-		padding-left: 250px;
-		padding-right: 250px;
-		margin-bottom: 10px;
-	}
-	.subtitle {
-    font-size: 18px;
-    color: rgba(74, 74, 74, 0.58);
-}
-	.title {
-    font-size: 48px;
-    font-family: 'Prata', serif;
-		font-weight: normal;
-	}
 		.scroll{
 	display:block;
 	padding-top: 20px;
@@ -189,7 +188,78 @@ body {
 	padding-left:250px;
 	padding-right:250px;
 	}
+
+
+	/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    border: 5px solid #333;
+    border-radius: 10px;
+}
+
+/* Slides */
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots/Circles for Slide Indicators */
+.dots-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #717171;
+}
 </style>
+
+	
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">Travel Agency</div>
@@ -212,9 +282,38 @@ body {
             <span class="bar"></span>
         </div>
     </nav>
+
+	
 		<body>
     <!-- Main Content -->
     <main>
+
+<!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <!-- Slides -->
+        <div class="slide fade">
+            <img src="image1.jpg" alt="https://tripin.hellodigi.ru/img/main_img-2.jpg">
+        </div>
+        <div class="slide fade">
+            <img src="image2.jpg" alt="https://tripin.hellodigi.ru/img/main_img-1.jpg">
+        </div>
+        <div class="slide fade">
+            <img src="image3.jpg" alt="https://tripin.hellodigi.ru/img/main_img-3.jpg">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a> <!-- Left arrow -->
+        <a class="next" onclick="changeSlide(1)">&#10095;</a> <!-- Right arrow -->
+    </div>
+
+    <!-- Dots/Circles for Slide Indicators -->
+    <div class="dots-container">
+        <span class="dot" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+
+	    
         <h1>Welcome to Our Travel Agency</h1>
         <p>Your journey begins here!</p>
     </main><h2 class="title">Top Destinations</h2>
@@ -257,7 +356,7 @@ body {
                                        </div>
                                    </div>
                                 </div>
-                                <div class="shadow js-shadow" style="background-image: url(img/destination-3.jpg)"></div>
+                                <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/destination-3.jpg)"></div>
                            </a>
 
                            <a href="travel-list-full-width.html" class="destinations_item" style="background-image: url(https://tripin.hellodigi.ru/img/destination-4.jpg)">
@@ -328,6 +427,57 @@ body {
 		
 	    
 </body>
+	<script>
+		let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+// Function to show a specific slide
+function showSlide(index) {
+    // Hide all slides
+    slides.forEach((slide) => {
+        slide.style.display = "none";
+    });
+
+    // Remove the "active" class from all dots
+    dots.forEach((dot) => {
+        dot.classList.remove("active");
+    });
+
+    // Show the current slide and mark its dot as active
+    slides[index].style.display = "block";
+    dots[index].classList.add("active");
+}
+
+// Function to change slide
+function changeSlide(n) {
+    currentSlide += n;
+
+    // Loop back to the first slide if at the end
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+}
+
+// Function to go to a specific slide
+function goToSlide(index) {
+    currentSlide = index;
+    showSlide(currentSlide);
+}
+
+// Automatically change slides every 5 seconds
+setInterval(() => {
+    changeSlide(1);
+}, 5000);
+
+// Show the first slide initially
+showSlide(currentSlide);
+	</script>
+	
 		<script>
 			// Toggle mobile menu
 const mobileMenu = document.getElementById("mobile-menu");
