@@ -227,24 +227,26 @@ body {
 
 	.slide-text {
     position: absolute;
-    top: 60%; /* Adjust vertical position as needed */
-    left: 150px; /* Fixed distance from the left edge */
+    top: 60%;
+    left: 150px;
     color: white;
     font-size: 4rem;
     font-family: Arial, sans-serif;
-    text-align: left; /* Align text to the left */
+    text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    max-width: 80%; /* Prevent text from stretching too far */
-    opacity: 0; /* Start with text invisible */
-    transform: translateX(-100%) translateY(-50%); /* Start off-screen to the left */
-    transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s; /* Smooth transition */
+    max-width: 80%;
+    opacity: 0;
+    transform: translateX(-100%) translateY(-50%);
+    transition: opacity 1s ease 0.5s, transform 1s ease 0.5s;
 }
 
 .slide.active .slide-text {
     opacity: 1; /* Make text visible */
-    transform: translateX(0) translateY(-50%); /* Move text to its final position */
+    transform: translateX(0) translateY(-50%);
 }
-
+.slide:not(.active) .slide-text {
+    transform: translateX(100%) translateY(-50%); /* Slide out to the right */
+}
 
 	
 </style>
