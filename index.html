@@ -377,7 +377,8 @@ body {
 		
 	    
 </body>
-	<script>let currentSlide = 0;
+	<script>
+		let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 
 // Function to show the next slide
@@ -398,8 +399,8 @@ function showSlides() {
         currentSlide = 0;
     }
 
-    // Change slide every 3 seconds (3000 milliseconds)
-    setTimeout(showSlides, 3000);
+    // Change slide every 4 seconds (4000 milliseconds)
+    setTimeout(showSlides, 4000);
 }
 
 // Start the slideshow
