@@ -225,17 +225,17 @@ body {
     object-fit: cover;
 }
 
-	.slide-text {
-    position: absolute;
-    top: 60%;
+    .slide-text {
     color: white;
     font-size: 4rem;
     font-family: Arial, sans-serif;
     text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     max-width: 80%;
+    position: absolute;
+    top: 60%;
     opacity: 0;
-    transform: translateX(0) translateY(-50%);
+    transform: translateX(-100%) translateY(-50%);
     transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
 .slide.active .slide-text {
@@ -243,7 +243,28 @@ body {
     transform: translateX(150px) translateY(-50%);
 }
 .slide:not(.active) .slide-text {
+    transform: translateX(100%) translateY(-50%);
+}
+
+    .sub-text {
+    color: white;
+    font-size: 4rem;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 80%;
+    position: absolute;
+    top: 60%;
     opacity: 0;
+    transition-delay: 0.5s;
+    transform: translateX(-100%) translateY(-50%);
+    transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
+}
+.slide.active .sub-text {
+    opacity: 1;
+    transform: translateX(150px) translateY(-50%);
+}
+.slide:not(.active) .sub-text {
     transform: translateX(100%) translateY(-50%);
 }
 
@@ -280,14 +301,17 @@ body {
             <div class="slide">
                 <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1">
                 <div class="slide-text">Explore the Taj Mahal</div>
+		<div class="sub-text">Personalized packages for all...</div>
             </div>
             <div class="slide">
                 <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2">
                 <div class="slide-text">Discover North Africa</div>
+		<div class="sub-text">Dive into new experiences...</div>
             </div>
             <div class="slide">
                 <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3">
                 <div class="slide-text">Watch the Aurora Borealis</div>
+		    <div class="sub-text">Enhance the adventure...</div>
             </div>
         </div>
     </div>
