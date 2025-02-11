@@ -228,6 +228,7 @@ body {
 	.slide-text {
     position: absolute;
     top: 60%;
+left: 150px;
     color: white;
     font-size: 4rem;
     font-family: Arial, sans-serif;
@@ -240,11 +241,11 @@ body {
 }
 .slide.active .slide-text {
     opacity: 1;
-    transform: translateX(150px) translateY(-50%);
+    transform: translateX(0) translateY(-50%);
 }
 .slide:not(.active) .slide-text {
     opacity: 0;
-    transform: translateX(100%) translateY(-50%); /* Slide out to the right */
+    transform: translateX(100vw) translateY(-50%);
 }
 
 	
