@@ -236,8 +236,8 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     max-width: 80%; /* Prevent text from stretching too far */
     opacity: 0; /* Start with text invisible */
-    transform: translateX(100%) translateY(-50%); /* Start off-screen to the right */
-    transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s; /* Delay of 0.5s */
+	transform: translateX(-100%) translateY(-50%); /* Start off-screen to the left */
+	transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s; /* Delay of 0.5s */
 }
 .slide.active .slide-text {
     opacity: 1; /* Make text visible */
