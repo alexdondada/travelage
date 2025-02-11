@@ -190,28 +190,42 @@ body {
 	}
 
 
+/* Slideshow Container */
 .slideshow-container {
     position: relative;
+    max-width: 800px;
     width: 100%;
-    max-width: 600px; /* Adjust this to your preferred size */
-    margin: auto;
     overflow: hidden;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1.5s ease-in-out;
-}
-
-img {
-    width: 100%;
-    height: auto;
+    border: 5px solid #333;
     border-radius: 10px;
 }
+
+/* Slides */
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* Fade Animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+	
 </style>
 
 	
@@ -367,39 +381,33 @@ img {
 		
 	    
 </body>
-	<script>
-		let slideIndex = 0;
+	<script>let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
 
+// Function to show the next slide
 function showSlides() {
-    let slides = document.querySelectorAll('.slide');
-
-    // Hide all slides initially (except for the first one)
-    slides.forEach((slide, index) => {
-        slide.style.opacity = 0;
-        slide.style.visibility = "hidden";
+    // Hide all slides
+    slides.forEach((slide) => {
+        slide.style.display = "none";
     });
 
-    // Increment slide index
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
+    // Show the current slide
+    slides[currentSlide].style.display = "block";
+
+    // Move to the next slide
+    currentSlide++;
+
+    // Reset to the first slide if at the end
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
     }
 
-    // Display the current slide
-    slides[slideIndex - 1].style.opacity = 1;
-    slides[slideIndex - 1].style.visibility = "visible";
-
-    // Set the interval to change slides every 3 seconds
-    setTimeout(showSlides, 3000); 
+    // Change slide every 3 seconds (3000 milliseconds)
+    setTimeout(showSlides, 3000);
 }
 
-// Ensure the first slide is visible when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    let slides = document.querySelectorAll('.slide');
-    slides[0].style.opacity = 1;
-    slides[0].style.visibility = "visible";
-    showSlides();  // Start the slideshow
-});
+// Start the slideshow
+showSlides();
 
 	</script>
 	
