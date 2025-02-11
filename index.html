@@ -105,62 +105,20 @@ body {
 }
 /* Nav bar ENDS here */	
 
-	/* SLIDESHOW */
-	.slick-slider {
+	/* DEST */
+	.destinations_item {
     position: relative;
-    display: block;
-    box-sizing: border-box;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
-}
-.most_popular .slick-list {
-    overflow: visible;
-}
-.slick-list {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-}
-.slick-track {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: block;
-}
-.slick-track:before, .slick-track:after {
-    display: table;
-    content: '';
-}
-.slick-initialized .slick-slide {
-    display: block;
-}
-@media screen and (max-width: 1400px) {
-    .tour_item {
-        width: 620px;
-    }
-}
-.tour_item {
-    width: 700px;
-    margin-right: 40px;
-    height: 350px;
-    position: relative;
+    width: 23%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 13px;
-    padding: 40px 48px;
+    margin-right: 2.66666667%;
+    margin-bottom: 2.66666667%;
     display: block;
     float: left;
-    background-size: cover;
-    background-position: center center;
 }
-.tour_item:before {
+.destinations_item:before {
     background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
@@ -174,83 +132,67 @@ body {
     height: 100%;
     border-radius: 13px;
 }
-.tour_item_top {
+.destinations_item .sq_parent {
+    width: 100%;
     position: relative;
-    z-index: 1;
-    padding-right: 80px;
+    padding-bottom: 100%;
+    overflow: hidden;
 }
-.tour_item_top .country {
-    font-size: 16px;
+.destinations_item .sq_parent .sq_wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.destinations_item .sq_parent .sq_wrap .sq_content {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+.destinations_item ._content {
+    position: relative;
+    height: 100%;
+    z-index: 1;
     display: flex
 ;
-    justify-content: center;
     flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    transform: translateY(30px);
+    transition: all 0.2sease-in;
+}
+@media screen and (max-width: 1520px) {
+    .destinations_item ._content ._title {
+        font-size: 30px;
+    }
+}
+.destinations_item ._content ._title {
+    font-size: 34px;
     color: #fff;
-    height: 60px;
+    font-family: 'Prata', serif;
+    text-align: center;
+    margin-bottom: 20px;
 }
-.tour_item_top .country span {
-    padding-left: 12px;
-    position: relative;
+.destinations_item ._content ._info {
+    color: rgba(255, 255, 255, 0.53);
+    text-align: center;
+    opacity: 0;
+    transition: all 0.2sease-in;
 }
-.tour_item_top .country span:before {
-    width: 6px;
-    height: 6px;
-    background: #D03000;
-    border-radius: 50%;
-    content: '';
+.destinations_item .shadow {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
     position: absolute;
-    left: 0;
-    top: 8px;
+    top: 10px;
+    left: -6px;
+    right: -6px;
+    bottom: -10px;
+    z-index: -1;
+    opacity: 0;
+    width: auto;
+    transition: all 0.21sease-out;
+    will-change: opacity;
 }
-.tour_item_top .add_bookmark {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.54);
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-.tour_item_top .add_bookmark i.is-added {
-    display: none;
-    position: relative;
-}
-.tour_item_top .add_bookmark .is-added {
-    width: 18px;
-    height: 22px;
-    background: url(../img/bookmark-active.svg) center center no-repeat;
-    background-size: contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -11px;
-    margin-left: -9px;
-    content: '';
-    z-index: 2;
-}
-.bouncy {
-    -webkit-animation: bouncy 0.6s;
-    animation: bouncy 0.6s;
-    -webkit-animation-duration: 0.6s;
-    animation-duration: 0.6s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-.tour_item_top .add_bookmark .fav-overlay {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: #D03000;
-    transform: scale(0);
-    transition: all .4s;
-    z-index: 1;
-}
-/* SLIDESHOW ENDS HERE */
-	
 </style>
 	<body>
     <!-- Navigation Bar -->
@@ -295,264 +237,119 @@ body {
 	    <p>zzzzzzzzzz</p>
 	    Most Popular Tours
 
+<div class="scroll">
+                           <a href="travel-list-full-width.html" class="destinations_item" style="background-image: url(https://tripin.hellodigi.ru/img/destination-1.jpg)">
+                               <div class="sq_parent">
+                                   <div class="sq_wrap">
+                                       <div class="sq_content">
+                                           <div class="_content">
+                                               <h3 class="_title">America</h3>
+                                               <p class="_info">45 tours | 62 hotels</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/destination-1.jpg)"></div>
+                           </a>
 
-<div class="tour-slider slick-initialized slick-slider" id="tour-slider">
-                           
+                           <a href="travel-list-full-width.html" class="destinations_item" style="background-image: url(https://tripin.hellodigi.ru/img/destination-2.jpg)">
+                               <div class="sq_parent">
+                                   <div class="sq_wrap">
+                                       <div class="sq_content">
+                                           <div class="_content">
+                                               <h3 class="_title">Australia</h3>
+                                               <p class="_info">45 tours | 62 hotels</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/destination-2.jpg)"></div>
+                           </a>
 
-                           
+                           <a href="travel-list-full-width.html" class="destinations_item" style="background-image: url(https://tripin.hellodigi.ru/img/destination-3.jpg)">
+                               <div class="sq_parent">
+                                   <div class="sq_wrap">
+                                       <div class="sq_content">
+                                           <div class="_content">
+                                               <h3 class="_title">Portugal</h3>
+                                               <p class="_info">45 tours | 62 hotels</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(img/destination-3.jpg)"></div>
+                           </a>
 
-                           
-                           
-                           
-                       <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="width: 20000px;/* transform: translate3d(-3300px, 0px, 0px); */" role="listbox"><a href="tour-page-right-sidebar.html" class="tour_item slick-slide slick-cloned" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-3.jpg)" tabindex="-1" role="option" aria-describedby="slick-slide12" data-slick-index="-2" aria-hidden="true">
-                               <div class="tour_item_top">
-                                   <p class="country">
-                                       <span>Iceland</span>
-                                   </p>
-                                   <div class="add_bookmark fav-button">
-                                       <i class="is-added bouncy"></i>
-                                       <i class="not-added bouncy"></i>
-                                       <span class="fav-overlay"></span>
-                                   </div>
-                               </div>
-                               <div class="tour_item_bottom">
-                                   <h3 class="_title">Reykjavik</h3>
-                                   <div class="_info">
-                                       <div class="_info_left">
-                                           <div class="days">5 days |</div>
-                                           <div class="cost">from $356</div>
-                                       </div>
-                                       <div class="_info_right">
-                                           <div class="rating-stars">
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star"></div>
-                                               <div class="star"></div>
+                           <a href="travel-list-full-width.html" class="destinations_item" style="background-image: url(https://tripin.hellodigi.ru/img/destination-4.jpg)">
+                               <div class="sq_parent">
+                                   <div class="sq_wrap">
+                                       <div class="sq_content">
+                                           <div class="_content">
+                                               <h3 class="_title">Russia</h3>
+                                               <p class="_info">45 tours | 62 hotels</p>
                                            </div>
-                                           <p class="rating-text">10 reviews</p>
                                        </div>
                                    </div>
-                               </div>
-                               <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-3.jpg)"></div>
-                           </a><a href="tour-page-right-sidebar.html" class="tour_item slick-slide slick-cloned" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-4.jpg)" tabindex="-1" role="option" aria-describedby="slick-slide13" data-slick-index="-1" aria-hidden="true">
-                               <div class="tour_item_top">
-                                   <p class="country">
-                                       <span>The biggest part of the world</span>
-                                   </p>
-                                   <div class="add_bookmark fav-button">
-                                       <i class="is-added bouncy"></i>
-                                       <i class="not-added bouncy"></i>
-                                       <span class="fav-overlay"></span>
-                                   </div>
-                               </div>
-                               <div class="tour_item_bottom">
-                                   <h3 class="_title">Asia</h3>
-                                   <div class="_info">
-                                       <div class="_info_left">
-                                           <div class="days">5 days |</div>
-                                           <div class="cost">from $356</div>
-                                       </div>
-                                       <div class="_info_right">
-                                           <div class="rating-stars">
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star"></div>
-                                               <div class="star"></div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/destination-4.jpg)"></div>
+                           </a>
+
+                           <a href="travel-list-full-width.html" class="destinations_item" style="background-image: url(https://tripin.hellodigi.ru/img/destination-5.jpg)">
+                               <div class="sq_parent">
+                                   <div class="sq_wrap">
+                                       <div class="sq_content">
+                                           <div class="_content">
+                                               <h3 class="_title">Africa</h3>
+                                               <p class="_info">45 tours | 62 hotels</p>
                                            </div>
-                                           <p class="rating-text">10 reviews</p>
                                        </div>
                                    </div>
-                               </div>
-                               <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-4.jpg)"></div>
-                           </a><a href="tour-page-right-sidebar.html" class="tour_item slick-slide" style="background-image: url(&quot;https://tripin.hellodigi.ru/img/tour-item-1.jpg&quot;);" tabindex="-1" role="option" aria-describedby="slick-slide10" data-slick-index="0" aria-hidden="true">
-                               <div class="tour_item_top">
-                                   <p class="country">
-                                       <span>North Africa</span>
-                                   </p>
-                                   <div class="add_bookmark fav-button">
-                                       <i class="is-added bouncy"></i>
-                                       <i class="not-added bouncy"></i>
-                                       <span class="fav-overlay"></span>
-                                   </div>
-                               </div>
-                               <div class="tour_item_bottom">
-                                   <h3 class="_title">A trip to the mighty desert</h3>
-                                   <div class="_info">
-                                       <div class="_info_left">
-                                           <div class="days">5 days |</div>
-                                           <div class="cost">from $356</div>
-                                       </div>
-                                       <div class="_info_right">
-                                           <div class="rating-stars">
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star"></div>
-                                               <div class="star"></div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/destination-5.jpg)"></div>
+                           </a>
+
+                           <a href="travel-list-full-width.html" class="destinations_item" style="background-image: url(https://tripin.hellodigi.ru/img/destination-6.jpg)">
+                               <div class="sq_parent">
+                                   <div class="sq_wrap">
+                                       <div class="sq_content">
+                                           <div class="_content">
+                                               <h3 class="_title">Italy</h3>
+                                               <p class="_info">45 tours | 62 hotels</p>
                                            </div>
-                                           <p class="rating-text">10 reviews</p>
                                        </div>
                                    </div>
-                               </div>
-                               <div class="shadow js-shadow" style="background-image: url(&quot;https://tripin.hellodigi.ru/img/tour-item-1.jpg&quot;);"></div>
-                           </a><a href="tour-page-right-sidebar.html" class="tour_item slick-slide" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-2.jpg)" tabindex="-1" role="option" aria-describedby="slick-slide11" data-slick-index="1" aria-hidden="true">
-                               <div class="tour_item_top">
-                                   <p class="country">
-                                       <span>United States of America</span>
-                                   </p>
-                                   <div class="add_bookmark fav-button">
-                                       <i class="is-added bouncy"></i>
-                                       <i class="not-added bouncy"></i>
-                                       <span class="fav-overlay"></span>
-                                   </div>
-                               </div>
-                               <div class="tour_item_bottom">
-                                   <h3 class="_title">Antelope canyon in Arizona USA exclusive tour</h3>
-                                   <div class="_info">
-                                       <div class="_info_left">
-                                           <div class="days">5 days |</div>
-                                           <div class="cost">from $356</div>
-                                       </div>
-                                       <div class="_info_right">
-                                           <div class="rating-stars">
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star"></div>
-                                               <div class="star"></div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/destination-6.jpg)"></div>
+                           </a>
+
+                           <a href="travel-list-full-width.html" class="destinations_item" style="background-image: url(https://tripin.hellodigi.ru/img/destination-7.jpg)">
+                               <div class="sq_parent">
+                                   <div class="sq_wrap">
+                                       <div class="sq_content">
+                                           <div class="_content">
+                                               <h3 class="_title">Maldives</h3>
+                                               <p class="_info">45 tours | 62 hotels</p>
                                            </div>
-                                           <p class="rating-text">5 reviews</p>
                                        </div>
                                    </div>
-                               </div>
-                               <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-2.jpg)"></div>
-                           </a><a href="tour-page-right-sidebar.html" class="tour_item slick-slide" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-3.jpg)" tabindex="-1" role="option" aria-describedby="slick-slide12" data-slick-index="2" aria-hidden="true">
-                               <div class="tour_item_top">
-                                   <p class="country">
-                                       <span>Iceland</span>
-                                   </p>
-                                   <div class="add_bookmark fav-button">
-                                       <i class="is-added bouncy"></i>
-                                       <i class="not-added bouncy"></i>
-                                       <span class="fav-overlay"></span>
-                                   </div>
-                               </div>
-                               <div class="tour_item_bottom">
-                                   <h3 class="_title">Reykjavik</h3>
-                                   <div class="_info">
-                                       <div class="_info_left">
-                                           <div class="days">5 days |</div>
-                                           <div class="cost">from $356</div>
-                                       </div>
-                                       <div class="_info_right">
-                                           <div class="rating-stars">
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star"></div>
-                                               <div class="star"></div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/destination-7.jpg)"></div>
+                           </a>
+
+                           <a href="travel-list-full-width.html" class="destinations_item" style="background-image: url(https://tripin.hellodigi.ru/img/destination-8.jpg)">
+                               <div class="sq_parent">
+                                   <div class="sq_wrap">
+                                       <div class="sq_content">
+                                           <div class="_content">
+                                               <h3 class="_title">Japan</h3>
+                                               <p class="_info">45 tours | 62 hotels</p>
                                            </div>
-                                           <p class="rating-text">10 reviews</p>
                                        </div>
                                    </div>
-                               </div>
-                               <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-3.jpg)"></div>
-                           </a><a href="tour-page-right-sidebar.html" class="tour_item slick-slide slick-current slick-active" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-4.jpg)" tabindex="-1" role="option" aria-describedby="slick-slide13" data-slick-index="3" aria-hidden="false">
-                               <div class="tour_item_top">
-                                   <p class="country">
-                                       <span>The biggest part of the world</span>
-                                   </p>
-                                   <div class="add_bookmark fav-button">
-                                       <i class="is-added bouncy"></i>
-                                       <i class="not-added bouncy"></i>
-                                       <span class="fav-overlay"></span>
-                                   </div>
-                               </div>
-                               <div class="tour_item_bottom">
-                                   <h3 class="_title">Asia</h3>
-                                   <div class="_info">
-                                       <div class="_info_left">
-                                           <div class="days">5 days |</div>
-                                           <div class="cost">from $356</div>
-                                       </div>
-                                       <div class="_info_right">
-                                           <div class="rating-stars">
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star"></div>
-                                               <div class="star"></div>
-                                           </div>
-                                           <p class="rating-text">10 reviews</p>
-                                       </div>
-                                   </div>
-                               </div>
-                               <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-4.jpg)"></div>
-                           </a><a href="tour-page-right-sidebar.html" class="tour_item slick-slide slick-cloned slick-active" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-1.jpg)" tabindex="-1" role="option" aria-describedby="slick-slide10" data-slick-index="4" aria-hidden="false">
-                               <div class="tour_item_top">
-                                   <p class="country">
-                                       <span>North Africa</span>
-                                   </p>
-                                   <div class="add_bookmark fav-button">
-                                       <i class="is-added bouncy"></i>
-                                       <i class="not-added bouncy"></i>
-                                       <span class="fav-overlay"></span>
-                                   </div>
-                               </div>
-                               <div class="tour_item_bottom">
-                                   <h3 class="_title">A trip to the mighty desert</h3>
-                                   <div class="_info">
-                                       <div class="_info_left">
-                                           <div class="days">5 days |</div>
-                                           <div class="cost">from $356</div>
-                                       </div>
-                                       <div class="_info_right">
-                                           <div class="rating-stars">
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star"></div>
-                                               <div class="star"></div>
-                                           </div>
-                                           <p class="rating-text">10 reviews</p>
-                                       </div>
-                                   </div>
-                               </div>
-                               <div class="shadow js-shadow" style="background-image: url(&quot;https://tripin.hellodigi.ru/img/tour-item-1.jpg&quot;);"></div>
-                           </a><a href="tour-page-right-sidebar.html" class="tour_item slick-slide slick-cloned" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-2.jpg)" tabindex="-1" role="option" aria-describedby="slick-slide11" data-slick-index="5" aria-hidden="true">
-                               <div class="tour_item_top">
-                                   <p class="country">
-                                       <span>United States of America</span>
-                                   </p>
-                                   <div class="add_bookmark fav-button">
-                                       <i class="is-added bouncy"></i>
-                                       <i class="not-added bouncy"></i>
-                                       <span class="fav-overlay"></span>
-                                   </div>
-                               </div>
-                               <div class="tour_item_bottom">
-                                   <h3 class="_title">Antelope canyon in Arizona USA exclusive tour</h3>
-                                   <div class="_info">
-                                       <div class="_info_left">
-                                           <div class="days">5 days |</div>
-                                           <div class="cost">from $356</div>
-                                       </div>
-                                       <div class="_info_right">
-                                           <div class="rating-stars">
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star filled"></div>
-                                               <div class="star"></div>
-                                               <div class="star"></div>
-                                           </div>
-                                           <p class="rating-text">5 reviews</p>
-                                       </div>
-                                   </div>
-                               </div>
-                               <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/tour-item-2.jpg)"></div>
-                           </a></div></div></div>
+                                </div>
+                                <div class="shadow js-shadow" style="background-image: url(https://tripin.hellodigi.ru/img/destination-8.jpg)"></div>
+                           </a>
+                       </div>
 		
 	    
 </body>
