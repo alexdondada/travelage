@@ -207,16 +207,24 @@ body {
     vertical-align: middle;
 }
 
-/* Set the initial state */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s; 
-	transition-timing-function: ease-in-out;
-	animation-timing-function: ease-in-out;
+.image-slide:nth-child(1) {
+  animation-delay: 0s;  /* First image starts without delay */
 }
-@keyframes fade {
-    from {opacity: 0.4;}
-    to {opacity: 1;}
+
+.image-slide:nth-child(2) {
+  animation-delay: 5s;  /* Second image starts after the first */
+}
+	.image-slide {
+  opacity: 0;  /* Start images as invisible */
+  animation: fadeInOut 3s infinite; /* Apply the fade-in and fade-out animation */
+}
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  20%, 80% {
+    opacity: 1;
+  }
 }
 	
 </style>
@@ -250,13 +258,13 @@ body {
 
     <div class="slideshow-container">
         <div class="slide fade">
-            <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1">
+            <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1" class="image-slide">
         </div>
         <div class="slide fade">
-            <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2">
+            <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2" class="image-slide">
         </div>
         <div class="slide fade">
-            <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3">
+            <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3" class="image-slide">
         </div>
     </div>
 
