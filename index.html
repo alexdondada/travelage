@@ -196,35 +196,18 @@ body {
     overflow: hidden;
 }
 
-/* Slides */
-.slide {
-    display: none;
-    width: 100%;
+.fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-.slide img {
-    width: 100%;
-    vertical-align: middle;
-}
-
-.image-slide:nth-child(1) {
-  animation-delay: 0s;  /* First image starts without delay */
-}
-
-.image-slide:nth-child(2) {
-  animation-delay: 5s;  /* Second image starts after the first */
-}
-	.image-slide {
-  opacity: 0;  /* Start images as invisible */
-  animation: fadeInOut 3s infinite; /* Apply the fade-in and fade-out animation */
-}
-@keyframes fadeInOut {
-  0%, 100% {
-    opacity: 0;
-  }
-  20%, 80% {
-    opacity: 1;
-  }
+.active {
+  opacity: 1;
 }
 	
 </style>
@@ -258,13 +241,13 @@ body {
 
     <div class="slideshow-container">
         <div class="slide fade">
-            <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1" class="image-slide">
+            <img src="https://tripin.hellodigi.ru/img/main_img-2.jpg" alt="Image 1" class="fade" id="slide1">
         </div>
         <div class="slide fade">
-            <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2" class="image-slide">
+            <img src="https://tripin.hellodigi.ru/img/main_img-1.jpg" alt="Image 2" class="fade" id="slide2">
         </div>
         <div class="slide fade">
-            <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3" class="image-slide">
+            <img src="https://tripin.hellodigi.ru/img/main_img-3.jpg" alt="Image 3" class="fade" id="slide3">
         </div>
     </div>
 
@@ -383,33 +366,27 @@ body {
 	    
 </body>
 	<script>
-		let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
+	
+		const images = document.querySelectorAll('.fade');
+let currentImageIndex = 0;
 
-// Function to show the next slide
-function showSlides() {
-    // Hide all slides
-    slides.forEach((slide) => {
-        slide.style.display = "none";
-    });
-
-    // Show the current slide
-    slides[currentSlide].style.display = "block";
-
-    // Move to the next slide
-    currentSlide++;
-
-    // Reset to the first slide if at the end
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    }
-
-    // Change slide every 4 seconds (4000 milliseconds)
-    setTimeout(showSlides, 4000);
+function changeImage() {
+  // Remove active class from the current image
+  images[currentImageIndex].classList.remove('active');
+  
+  // Update the index to show the next image
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  
+  // Add active class to the new image
+  images[currentImageIndex].classList.add('active');
 }
 
-// Start the slideshow
-showSlides();
+// Initialize the first image as active
+images[currentImageIndex].classList.add('active');
+
+// Change image every 4 seconds
+setInterval(changeImage, 4000);
+
 
 	</script>
 	
