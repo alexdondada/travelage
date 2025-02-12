@@ -241,10 +241,10 @@ body {
 }
 .slide.active .slide-text {
     opacity: 1;
-    transform: translateX(130px);
+    transform: translateX(0);
 }
 .slide:not(.active) .slide-text {
-    transform: translateX(100%);
+    transform: translateX(-100%);
 }
 
     .sub-text {
@@ -264,13 +264,13 @@ body {
 .slide.active .sub-text{
     opacity: 1;transform: translateX(0);}
 .slide:not(.active) .sub-text{
-    transform: translateX(100%);}
+    transform: translateX(-100%);}
 
 
 	
 .slide-button-link {
     position: absolute;
-    top: 74%;
+    top: 75%;
     left: 250px;
     text-decoration: none;
     opacity: 0;
@@ -296,7 +296,7 @@ body {
 
 .slide:not(.active) .slide-text,
 .slide:not(.active) .slide-button-link {
-    transform: translateX(100%);}
+    transform: translateX(-100%);}
 
 </style>
 
