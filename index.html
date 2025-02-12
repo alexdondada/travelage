@@ -357,36 +357,42 @@ body {
  <h2 class="title">Most Popular Tours</h2>
 			<p class="subtitle">Latin literature from 45 BC, making it over 2000 years old</p>
 
-<div class="slideshow-container2">
-        <div class="mySlides fade2">
-            <img src="https://tripin.hellodigi.ru/img/tour-item-2.jpg" alt="Antelope Canyon" id="img2">
-            <div class="text2">Antelope Canyon, Arizona, USA<br>5 days | from $356</div>
-        </div>
-        <div class="mySlides fade2">
-            <img src="https://tripin.hellodigi.ru/img/tour-item-1.jpg" alt="Reykjavik" id="img2">
-            <div class="text2">Reykjavik, Iceland<br>5 days | from $356</div>
-        </div>
-        <div class="mySlides fade2">
-            <img src="https://tripin.hellodigi.ru/img/tour-item-3.jpg" alt="Asia" id="img2">
-            <div class="text2">Asia<br>5 days | from $310 | 10 reviews</div>
+
+			<div class="slideshow-container2">
+        <div class="slides2">
+            <div class="slide2">
+                <img src="https://tripin.hellodigi.ru/img/tour-item-2.jpg" alt="Antelope Canyon" id="img2">
+                <div class="text2">Antelope Canyon, Arizona, USA<br>5 days | from $356</div>
+            </div>
+            <div class="slide2">
+                <img src="https://tripin.hellodigi.ru/img/tour-item-3.jpg" alt="Reykjavik" id="img2">
+                <div class="text2">Reykjavik, Iceland<br>5 days | from $356</div>
+            </div>
+            <div class="slide2">
+                <img src="https://tripin.hellodigi.ru/img/tour-item-1.jpg" alt="Asia" id="img2">
+                <div class="text2">Asia<br>5 days | from $310 | 10 reviews</div>
+            </div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 <style>
-body {
-    font-family: Arial, sans-serif;
-}
-
 .slideshow-container2 {
-    max-width: 800px;
+    width: 100%;
     position: relative;
-    margin: auto;
+    overflow: hidden;
 }
 
-.mySlides {
-    display: none;
-	text-align: center;
+.slides2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide2 {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
 }
 
 img2 {
@@ -394,19 +400,6 @@ img2 {
     height: 400px;
     border-radius: 15px;
     object-fit: cover; 
-}
-
-.text2 {
-    color: white;
-    font-size: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-	    border-radius: 0 0 15px 15px;
 }
 
 .prev, .next {
@@ -439,34 +432,45 @@ img2 {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.fade2 {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade2 {
-    from {opacity: .4}
-    to {opacity: 1}
+.text2 {
+    color: white;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+	    border-radius: 0 0 15px 15px;
 }
 </style>
 <script>
-	let slideIndex = 1;
-showSlides(slideIndex);
+	let slideIndex = 0;
+const slides = document.querySelector('.slides2');
+const totalSlides = document.querySelectorAll('.slide2').length;
+
+function showSlides() {
+    slideIndex++;
+    if (slideIndex >= totalSlides) {
+        slideIndex = 0;
+    }
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    setTimeout(showSlides, 3000); // Change slide every 3 seconds
+}
 
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+    slideIndex += n;
+    if (slideIndex >= totalSlides) {
+        slideIndex = 0;
+    } else if (slideIndex < 0) {
+        slideIndex = totalSlides - 1;
+    }
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
 }
 
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
-}
+showSlides(); // Start the slideshow
+	
 </script>
 
 
