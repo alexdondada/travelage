@@ -389,19 +389,23 @@ body {
 }
 
 img {
-    width: 100%;
-    height: auto;
+    width: 600px; /* Set a specific width */
+    height: 400px; /* Set a specific height */
+    border-radius: 15px; /* Add border radius */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
 }
 
 .text2 {
     color: white;
     font-size: 20px;
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     position: absolute;
     bottom: 10px;
     width: 100%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
+	    border-radius: 0 0 15px 15px; /* Match border radius with image */
 }
 
 .prev, .next {
