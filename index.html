@@ -358,51 +358,64 @@ body {
 			<p class="subtitle">Latin literature from 45 BC, making it over 2000 years old</p>
 
 
-			<div class="slideshow-container2">
-        <div class="slides2">
-            <div class="slide2">
+			<div class="travel-slideshow-container" id="travelSlideshow">
+        <div class="travel-slides" id="travelSlides">
+            <div class="travel-slide">
                 <img src="https://tripin.hellodigi.ru/img/tour-item-2.jpg" alt="Antelope Canyon" id="img2">
-                <div class="text2">Antelope Canyon, Arizona, USA<br>5 days | from $356</div>
+                <div class="travel-slide-text">Antelope Canyon, Arizona, USA<br>5 days | from $356</div>
             </div>
-            <div class="slide2">
+            <div class="travel-slide">
                 <img src="https://tripin.hellodigi.ru/img/tour-item-3.jpg" alt="Reykjavik" id="img2">
-                <div class="text2">Reykjavik, Iceland<br>5 days | from $356</div>
+                <div class="travel-slide-text">Reykjavik, Iceland<br>5 days | from $356</div>
             </div>
-            <div class="slide2">
+            <div class="travel-slide">
                 <img src="https://tripin.hellodigi.ru/img/tour-item-1.jpg" alt="Asia" id="img2">
-                <div class="text2">Asia<br>5 days | from $310 | 10 reviews</div>
+                <div class="travel-slide-text">Asia<br>5 days | from $310 | 10 reviews</div>
             </div>
         </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <a class="travel-slide-prev" onclick="travelPlusSlides(-1)">&#10094;</a>
+        <a class="travel-slide-next" onclick="travelPlusSlides(1)">&#10095;</a>
     </div>
+
 <style>
-.slideshow-container2 {
+.travel-slideshow-container {
     width: 100%;
     position: relative;
     overflow: hidden;
 }
 
-.slides2 {
+.travel-slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
-.slide2 {
+.travel-slide {
     min-width: 100%;
     box-sizing: border-box;
     position: relative;
     text-align: center;
 }
 
-img2 {
-    width: 800px;
+.travel-slide img {
+    width: 600px;
     height: 400px;
     border-radius: 15px;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
-.prev, .next {
+.travel-slide-text {
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 15px 15px;
+}
+
+.travel-slide-prev, .travel-slide-next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -418,59 +431,45 @@ img2 {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.next {
+.travel-slide-next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-.prev {
+.travel-slide-prev {
     left: 0;
     border-radius: 0 3px 3px 0;
 }
 
-.prev:hover, .next:hover {
+.travel-slide-prev:hover, .travel-slide-next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
-
-.text2 {
-    color: white;
-    font-size: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-	    border-radius: 0 0 15px 15px;
 }
 </style>
 <script>
-	let slideIndex = 0;
-const slides = document.querySelector('.slides2');
-const totalSlides = document.querySelectorAll('.slide2').length;
+	let travelSlideIndex = 0;
+const travelSlides = document.getElementById('travelSlides');
+const travelTotalSlides = document.querySelectorAll('.travel-slide').length;
 
-function showSlides() {
-    slideIndex++;
-    if (slideIndex >= totalSlides) {
-        slideIndex = 0;
+function travelShowSlides() {
+    travelSlideIndex++;
+    if (travelSlideIndex >= travelTotalSlides) {
+        travelSlideIndex = 0;
     }
-    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-    setTimeout(showSlides, 3000); // Change slide every 3 seconds
+    travelSlides.style.transform = `translateX(-${travelSlideIndex * 100}%)`;
+    setTimeout(travelShowSlides, 3000); // Change slide every 3 seconds
 }
 
-function plusSlides(n) {
-    slideIndex += n;
-    if (slideIndex >= totalSlides) {
-        slideIndex = 0;
-    } else if (slideIndex < 0) {
-        slideIndex = totalSlides - 1;
+function travelPlusSlides(n) {
+    travelSlideIndex += n;
+    if (travelSlideIndex >= travelTotalSlides) {
+        travelSlideIndex = 0;
+    } else if (travelSlideIndex < 0) {
+        travelSlideIndex = travelTotalSlides - 1;
     }
-    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    travelSlides.style.transform = `translateX(-${travelSlideIndex * 100}%)`;
 }
 
-showSlides(); // Start the slideshow
-	
+travelShowSlides(); // Start the slideshow
 </script>
 
 
