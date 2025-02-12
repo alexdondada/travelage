@@ -359,15 +359,15 @@ body {
 
 <div class="slideshow-container2">
         <div class="mySlides fade2">
-            <img src="https://tripin.hellodigi.ru/img/tour-item-2.jpg" alt="Antelope Canyon">
+            <img src="https://tripin.hellodigi.ru/img/tour-item-2.jpg" alt="Antelope Canyon" id="img2">
             <div class="text2">Antelope Canyon, Arizona, USA<br>5 days | from $356</div>
         </div>
         <div class="mySlides fade2">
-            <img src="https://tripin.hellodigi.ru/img/tour-item-1.jpg" alt="Reykjavik">
+            <img src="https://tripin.hellodigi.ru/img/tour-item-1.jpg" alt="Reykjavik" id="img2">
             <div class="text2">Reykjavik, Iceland<br>5 days | from $356</div>
         </div>
         <div class="mySlides fade2">
-            <img src="https://tripin.hellodigi.ru/img/tour-item-3.jpg" alt="Asia">
+            <img src="https://tripin.hellodigi.ru/img/tour-item-3.jpg" alt="Asia" id="img2">
             <div class="text2">Asia<br>5 days | from $310 | 10 reviews</div>
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -379,20 +379,21 @@ body {
 }
 
 .slideshow-container2 {
-    max-width: 1000px;
+    max-width: 800px;
     position: relative;
     margin: auto;
 }
 
 .mySlides {
     display: none;
+	text-align: center;
 }
 
-img {
-    width: 600px; /* Set a specific width */
-    height: 400px; /* Set a specific height */
-    border-radius: 15px; /* Add border radius */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+img2 {
+    width: 800px;
+    height: 400px;
+    border-radius: 15px;
+    object-fit: cover; 
 }
 
 .text2 {
@@ -405,7 +406,7 @@ img {
     width: 100%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
-	    border-radius: 0 0 15px 15px; /* Match border radius with image */
+	    border-radius: 0 0 15px 15px;
 }
 
 .prev, .next {
