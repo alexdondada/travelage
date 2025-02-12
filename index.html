@@ -287,9 +287,6 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-	opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
 }
 
 .slide.active .slide-text,
@@ -361,15 +358,15 @@ body {
 			<p class="subtitle">Latin literature from 45 BC, making it over 2000 years old</p>
 
 <div class="slideshow-container2">
-        <div class="mySlides fade">
+        <div class="mySlides fade2">
             <img src="https://tripin.hellodigi.ru/img/tour-item-2.jpg" alt="Antelope Canyon">
             <div class="text2">Antelope Canyon, Arizona, USA<br>5 days | from $356</div>
         </div>
-        <div class="mySlides fade">
+        <div class="mySlides fade2">
             <img src="https://tripin.hellodigi.ru/img/tour-item-1.jpg" alt="Reykjavik">
             <div class="text2">Reykjavik, Iceland<br>5 days | from $356</div>
         </div>
-        <div class="mySlides fade">
+        <div class="mySlides fade2">
             <img src="https://tripin.hellodigi.ru/img/tour-item-3.jpg" alt="Asia">
             <div class="text2">Asia<br>5 days | from $310 | 10 reviews</div>
         </div>
@@ -377,7 +374,7 @@ body {
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 <style>
-	slideshow-container2 {
+	.slideshow-container2 {
     max-width: 1000px;
     position: relative;
     margin: auto;
@@ -421,12 +418,12 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.fade {
+.fade2 {
     animation-name: fade;
     animation-duration: 1.5s;
 }
 
-@keyframes fade {
+@keyframes fade2 {
     from {opacity: .4}
     to {opacity: 1}
 }
