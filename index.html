@@ -374,7 +374,11 @@ body {
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 <style>
-	.slideshow-container2 {
+body {
+    font-family: Arial, sans-serif;
+}
+
+.slideshow-container2 {
     max-width: 1000px;
     position: relative;
     margin: auto;
@@ -383,7 +387,13 @@ body {
 .mySlides {
     display: none;
 }
-	.text2 {
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.text2 {
     color: white;
     font-size: 20px;
     padding: 15px;
@@ -407,11 +417,17 @@ body {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
 }
 
 .prev:hover, .next:hover {
