@@ -171,11 +171,6 @@ body {
     transform: translateY(30px);
     transition: all 0.2sease-in;
 }
-@media screen and (max-width: 1520px) {
-    .destinations_item ._content ._title {
-        font-size: 30px;
-    }
-}
 .destinations_item ._content ._title {
     color: #fff;
     font-family: 'Prata', serif;
@@ -336,7 +331,7 @@ body {
 	line-height: 2;
 	top: 55%;
 }
-	.travel-slide-text-price {
+	.travel-slide-text-days {
     color: white;
     font-size: 20px;
     padding: 15px;
@@ -348,7 +343,19 @@ body {
 	line-height: 2;
 		top:80%;
 }
-
+	.travel-slide-text-price {
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: left;
+	line-height: 2;
+		top:80%;
+		font-weight: 700;
+}
+	
 .travel-slide-prev, .travel-slide-next {
     cursor: pointer;
     position: absolute;
@@ -442,15 +449,15 @@ body {
         <div class="travel-slides" id="travelSlides">
             <div class="travel-slide">
                 <img src="https://tripin.hellodigi.ru/img/tour-item-2.jpg" alt="Antelope Canyon" id="img2">
-                <div class="travel-slide-text-country">Antelope Canyon, Arizona, USA</div><br><div class="travel-slide-text-price">5 days | from $356</div>
+                <div class="travel-slide-text-country">Antelope Canyon, Arizona, USA</div><br><div class="travel-slide-text-days">5 days</div> | <div class="travel-slide-text-price">from $356</div>
             </div>
             <div class="travel-slide">
                 <img src="https://tripin.hellodigi.ru/img/tour-item-3.jpg" alt="Reykjavik" id="img2">
-                <div class="travel-slide-text-country">Reykjavik, Iceland</div><br><div class="travel-slide-text-price">5 days | from $356</div>
+                <div class="travel-slide-text-country">Reykjavik, Iceland</div><br><div class="travel-slide-text-days">5 days</div> | <div class="travel-slide-text-price">from $356</div>
             </div>
             <div class="travel-slide">
                 <img src="https://tripin.hellodigi.ru/img/tour-item-1.jpg" alt="Asia" id="img2">
-                <div class="travel-slide-text-country">Asia</div><br><div class="travel-slide-text-price">5 days | from $310 | 10 reviews</div>
+                <div class="travel-slide-text-country">Asia</div><br><div class="travel-slide-text-days">5 days</div> | <div class="travel-slide-text-price">from $356</div>
             </div>
         </div>
         <a class="travel-slide-prev" onclick="travelPlusSlides(-1)">&#10094;</a>
