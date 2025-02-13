@@ -314,9 +314,15 @@ body {
 
 .travel-slide img {
     width: 800px;
+    margin-right: 40px;
     height: 400px;
-    border-radius: 15px;
-    object-fit: cover;
+    position: relative;
+    border-radius: 13px;
+    padding: 40px 48px;
+    display: block;
+    float: left;
+    background-size: cover;
+    background-position: center center;
 }
 
 .travel-slide-text-country {
@@ -342,6 +348,7 @@ body {
     text-align: left;
 	line-height: 2;
 		top:80%;
+		color: #838383;
 }
 	.travel-slide-text-price {
     color: white;
@@ -449,15 +456,15 @@ body {
         <div class="travel-slides" id="travelSlides">
             <div class="travel-slide">
                 <img src="https://tripin.hellodigi.ru/img/tour-item-2.jpg" alt="Antelope Canyon" id="img2">
-                <div class="travel-slide-text-country">Antelope Canyon, Arizona, USA</div><br><div class="travel-slide-text-days">5 days</div> | <div class="travel-slide-text-price">from $356</div>
+                <div class="travel-slide-text-country">Antelope Canyon, Arizona, USA</div><br><div class="travel-slide-text-days">5 days | </div><div class="travel-slide-text-price">from $356</div>
             </div>
             <div class="travel-slide">
                 <img src="https://tripin.hellodigi.ru/img/tour-item-3.jpg" alt="Reykjavik" id="img2">
-                <div class="travel-slide-text-country">Reykjavik, Iceland</div><br><div class="travel-slide-text-days">5 days</div> | <div class="travel-slide-text-price">from $356</div>
+                <div class="travel-slide-text-country">Reykjavik, Iceland</div><br><div class="travel-slide-text-days">5 days | </div><div class="travel-slide-text-price">from $356</div>
             </div>
             <div class="travel-slide">
                 <img src="https://tripin.hellodigi.ru/img/tour-item-1.jpg" alt="Asia" id="img2">
-                <div class="travel-slide-text-country">Asia</div><br><div class="travel-slide-text-days">5 days</div> | <div class="travel-slide-text-price">from $356</div>
+                <div class="travel-slide-text-country">Asia</div><br><div class="travel-slide-text-days">5 days | </div><div class="travel-slide-text-price">from $356</div>
             </div>
         </div>
         <a class="travel-slide-prev" onclick="travelPlusSlides(-1)">&#10094;</a>
