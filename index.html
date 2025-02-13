@@ -397,6 +397,29 @@ select, input[type="date"] {
     font-size: 14px;
 }
 
+.date-input {
+    position: relative;
+}
+
+.date-input input[type="date"] {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.date-display {
+    display: block;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    text-align: center;
+}
+
 .input-group {
     display: flex;
     align-items: center;
@@ -643,13 +666,19 @@ button[type="submit"]:hover {
             <!-- Check-In Date -->
             <div class="form-group">
                 <label for="checkin">Check In</label>
-                <input type="date" id="checkin" name="checkin" required>
+                <div class="date-input">
+                    <input type="date" id="checkin" name="checkin" required>
+                    <span class="date-display" id="checkinDisplay"></span>
+                </div>
             </div>
 
             <!-- Check-Out Date -->
             <div class="form-group">
                 <label for="checkout">Check Out</label>
-                <input type="date" id="checkout" name="checkout" required>
+                <div class="date-input">
+                    <input type="date" id="checkout" name="checkout" required>
+                    <span class="date-display" id="checkoutDisplay"></span>
+                </div>
             </div>
 
             <!-- Number of Adults -->
@@ -717,6 +746,15 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
 
     const confirmationMessage = `Booking confirmed for ${destination} from ${checkin} to ${checkout} for ${adults} adults and ${children} children.`;
     alert(confirmationMessage);
+});
+
+// Display selected dates
+document.getElementById('checkin').addEventListener('change', function() {
+    document.getElementById('checkinDisplay').textContent = this.value;
+});
+
+document.getElementById('checkout').addEventListener('change', function() {
+    document.getElementById('checkoutDisplay').textContent = this.value;
 });
 	</script>
 	
