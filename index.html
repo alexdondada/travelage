@@ -363,7 +363,7 @@ body {
 	div.elem-group {
   margin: auto;
 		width: 500px;
-		padding: 50px;
+		padding-bottom: 20px;
 }
 label {
   display: block;
@@ -395,6 +395,8 @@ button {
   font-family: 'Nanum Gothic';
   border-radius: 4px;
   cursor: pointer;
+	position: relative;
+    left: 45.6%;
 }
 button:hover {
   border: 2px solid black;
@@ -586,6 +588,9 @@ button:hover {
                            </a>
                        </div>
 
+   <h2 class="title">Interest Form</h2>
+			<p class="subtitle">Fill out the form below if you are interested in a specific trip</p>
+			
 <form action="reservation.php" method="post">
   <div class="elem-group">
     <label for="name">Your Name</label>
@@ -617,12 +622,12 @@ button:hover {
     <input type="date" id="checkout-date" name="checkout" required>
   </div>
   <div class="elem-group">
-    <label for="room-selection">Select Room Preference</label>
+    <label for="room-selection">Destination</label>
     <select id="room-selection" name="room_preference" required>
-        <option value="">Choose a Room from the List</option>
-        <option value="connecting">Connecting</option>
-        <option value="adjoining">Adjoining</option>
-        <option value="adjacent">Adjacent</option>
+        <option value="">Choose a destination from the List</option>
+        <option value="connecting">Argentina</option>
+        <option value="adjoining">Canada</option>
+        <option value="adjacent">USA</option>
     </select>
   </div>
   <hr>
